@@ -5,7 +5,7 @@ const experienceData = [
     title: "AI Chatbot Project",
     company: "Devpost",
     role: "Frontend Developer (AI Integration)",
-    year: "2024",
+    year: "2025",
     description:
       "Built an AI-powered chatbot using OpenAI API with real-time responses and modern chat UI design.",
     image:
@@ -15,7 +15,7 @@ const experienceData = [
     title: "GLE Education Platform",
     company: "RSCF",
     role: "Full Stack Developer",
-    year: "2023",
+    year: "2026",
     description:
       "Developed a complete education platform with competitions and dashboard functionality.",
     image:
@@ -25,7 +25,7 @@ const experienceData = [
     title: "E-commerce Website",
     company: "Codveda Technologies",
     role: "Full Stack Developer Intern",
-    year: "2023",
+    year: "2025",
     description:
       "Built a full-stack e-commerce app with cart management and REST API integration.",
     image:
@@ -35,7 +35,7 @@ const experienceData = [
     title: "Travel Website UI",
     company: "FlyFar",
     role: "Frontend Developer",
-    year: "2022",
+    year: "2025",
     description:
       "Designed responsive travel website UI with high-conversion UX patterns.",
     image:
