@@ -56,11 +56,11 @@ const skillsData = [
 const Skills = () => {
   return (
     <div className="py-16">
-      <h3 className="text-center tracking-widest uppercase text-sm sm:text-base lg:text-lg font-semibold mb-10">
-        [ Skills ]
+      <h3 className="text-center font-tit tracking-widest text-sm sm:text-base lg:text-lg font-semibold mb-10">
+        [ (01) Skills ]
       </h3>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6 px-4 font-tit">
+      <div className="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-6 px-4 font-tit">
         {skillsData.map((item, index) => (
           <div
             key={index}

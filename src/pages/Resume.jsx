@@ -1,6 +1,7 @@
 import React from "react";
 import Container from "./../container/Container";
 import Skills from "../Components/resumeArea/Skills";
+import Experience from "../Components/resumeArea/Experience";
 
 const Resume = () => {
   return (
@@ -27,6 +28,7 @@ const Resume = () => {
             </div>
           </div>
           <Skills />
+          <Experience />
         </div>
       </Container>
     </div>
