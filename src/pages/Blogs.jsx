@@ -43,7 +43,10 @@ const Blogs = () => {
   };
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 relative overflow-hidden">
+    <section
+      id="blogs"
+      className="py-12 sm:py-16 lg:py-20 relative overflow-hidden"
+    >
       <Container>
         {/* Header */}
         <div className="mb-10 sm:mb-12 flex flex-col lg:flex-row gap-6 lg:gap-20 lg:items-center">

@@ -1,11 +1,13 @@
 import React from "react";
 import HeroVideo from "../images/hero.mp4";
 import Container from "../container/Container";
-import Nabvar from "../Components/Nabvar";
 
 const Home = () => {
   return (
-    <div className="relative h-screen w-full overflow-hidden flex items-center justify-center">
+    <div
+      id="home"
+      className="relative h-screen w-full overflow-hidden flex items-center justify-center"
+    >
       <video
         autoPlay
         loop

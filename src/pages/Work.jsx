@@ -20,7 +20,7 @@ const Work = () => {
   const moveX = Math.min(scrollX * 0.2, 300);
 
   return (
-    <div className="py-16">
+    <div id="work" className="py-16">
       <Container>
         <div className="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-14 mb-12">
           <div>

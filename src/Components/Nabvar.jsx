@@ -1,87 +1,101 @@
 import React, { useState } from "react";
+import LogoImage from "../images/logo.png";
+import { HiMenu, HiX } from "react-icons/hi";
 import Container from "./../container/Container";
-import ImageLogo from "../images/logo.png";
-import { HiMenuAlt3, HiX } from "react-icons/hi"; // Install react-icons
 
-const Nabvar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+// 1. Updated menuItems with href IDs
+const menuItems = [
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Work", href: "#work" },
+  { label: "Expertises", href: "#expertises" },
+  { label: "Blogs", href: "#blogs" },
+  { label: "Contact", href: "#contact" },
+];
 
-  const navLinks = [
-    { name: "Home", href: "#" },
-    { name: "About", href: "#" },
-    { name: "Works", href: "#" },
-    { name: "Expertise", href: "#" },
-    { name: "Blogs", href: "#" },
-  ];
+const NavItem = ({ label, href }) => {
+  return (
+    <li className="relative group overflow-hidden cursor-pointer text-[13px] font-bold rounded-[10px] transition-all list-none">
+      <a href={href} className="block px-5 py-2.5">
+        <div className="absolute inset-0 bg-red-500 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
+        <div className="absolute inset-0 bg-black translate-y-full group-hover:translate-y-0 transition-transform duration-300 delay-75 ease-out"></div>
+
+        <span className="relative z-10 block transition-transform duration-500 group-hover:-translate-y-[160%]">
+          {label}
+        </span>
+
+        <span className="absolute inset-0 z-20 flex items-center justify-center text-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out">
+          {label}
+        </span>
+      </a>
+    </li>
+  );
+};
+
+const Navbar = ({ className }) => {
+  const [open, setOpen] = useState(false);
 
   return (
-    <nav className="bg-black/90 backdrop-blur-md border-b border-gray-800 sticky top-0 z-50">
+    <nav
+      className={`fixed w-full font-tit z-50 py-4 transition-all ${className}`}
+    >
       <Container>
-        <div className="flex items-center justify-between py-4">
-          {/* Logo */}
+        <div className="flex items-center justify-between">
           <div className="flex-shrink-0">
-            <img
-              className="w-12 h-12 md:w-16 md:h-16 object-contain"
-              src={ImageLogo}
-              alt="Logo"
-            />
+            <a href="#home">
+              <img
+                src={LogoImage}
+                alt="Logo"
+                className="w-18 md:w-22 object-contain"
+              />
+            </a>
           </div>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:block">
-            <ul className="flex items-center gap-8">
-              {navLinks.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors duration-300 text-sm font-medium uppercase tracking-wider"
-                  >
-                    {link.name}
-                  </a>
-                </li>
+          <div className="hidden md:block bg-white/80 backdrop-blur-md border border-gray-200 p-1.5 rounded-[14px] shadow-sm">
+            <ul className="flex gap-1">
+              {menuItems.map((item, i) => (
+                <NavItem key={i} label={item.label} href={item.href} />
               ))}
             </ul>
           </div>
 
-          {/* Hire Me Button (Desktop) */}
-          <div className="hidden md:block">
-            <button className="font-tit font-semibold px-6 py-2.5 rounded-full border border-white text-white hover:bg-white hover:text-black transition-all duration-300 active:scale-95">
+          <div className="flex items-center gap-4">
+            <button className="hidden md:block border-2 border-gray-400 rounded-[8px] hover:bg-gray-400 hover:text-black text-gray-400 transition-all duration-300 active:scale-95 font-bold text-sm px-6 py-2.5">
               Hire Me
             </button>
-          </div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
             <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-white text-3xl"
+              onClick={() => setOpen(!open)}
+              className="md:hidden p-2 text-3xl text-gray-800 hover:bg-gray-100 rounded-lg transition-colors"
             >
-              {isOpen ? <HiX /> : <HiMenuAlt3 />}
+              {open ? <HiX /> : <HiMenu />}
             </button>
           </div>
         </div>
 
-        {/* Mobile Dropdown Menu */}
         <div
-          className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${
-            isOpen ? "max-h-96 opacity-100 pb-6" : "max-h-0 opacity-0"
-          }`}
+          className={`
+            md:hidden overflow-hidden transition-all duration-500 ease-in-out
+            ${open ? "max-h-[500px] opacity-100 mt-4" : "max-h-0 opacity-0 pointer-events-none"}
+          `}
         >
-          <ul className="flex flex-col gap-4 px-2">
-            {navLinks.map((link) => (
-              <li key={link.name}>
+          <ul className="flex flex-col gap-2 bg-white p-4 rounded-[20px] shadow-2xl border border-gray-100">
+            {menuItems.map((item, i) => (
+              <li key={i}>
                 <a
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-gray-300 hover:text-white block text-lg"
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="block text-lg font-bold text-gray-800 p-3 rounded-xl hover:bg-gray-50 hover:text-red-500 transition-all"
                 >
-                  {link.name}
+                  {item.label}
                 </a>
               </li>
             ))}
-            <button className="w-full mt-4 font-semibold px-5 py-3 rounded-xl border border-white text-white hover:bg-white hover:text-black duration-300">
-              Hire Me
-            </button>
+            <li className="pt-2">
+              <button className="w-full border-2 border-black rounded-[12px] bg-black text-white py-4 font-bold active:scale-[0.98] transition-transform">
+                Hire Me
+              </button>
+            </li>
           </ul>
         </div>
       </Container>
@@ -89,4 +103,4 @@ const Nabvar = () => {
   );
 };
 
-export default Nabvar;
+export default Navbar;

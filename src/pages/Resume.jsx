@@ -5,7 +5,7 @@ import Experience from "../Components/resumeArea/Experience";
 
 const Resume = () => {
   return (
-    <div>
+    <div id="expertises">
       <Container>
         <div>
           <div className=" flex flex-col lg:flex-row">

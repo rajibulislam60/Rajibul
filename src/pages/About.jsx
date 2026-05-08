@@ -4,7 +4,7 @@ import PersonalImage from "../images/my_pic 2.png";
 
 const About = () => {
   return (
-    <section className="py-12 lg:py-20">
+    <section id="about" className="py-12 lg:py-20">
       <Container>
         <div className=" mx-auto">
           <h3 className=" tracking-widest uppercase text-lg font-tit font-semibold mb-4">
