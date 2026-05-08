@@ -5,13 +5,15 @@ import Work from "./pages/Work";
 import Footer from "./Components/Footer";
 import Blogs from "./pages/Blogs";
 import Resume from "./pages/Resume";
+import Nabvar from "./Components/Nabvar";
 
 const App = () => {
   return (
     <div>
+      <Nabvar />
       <Home />
       <About />
-      {/* <Work /> */}
+      <Work />
       <Resume />
       <Blogs />
       <Footer />

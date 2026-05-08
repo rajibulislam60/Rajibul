@@ -1,11 +1,11 @@
 import React from "react";
 import HeroVideo from "../images/hero.mp4";
 import Container from "../container/Container";
+import Nabvar from "../Components/Nabvar";
 
 const Home = () => {
   return (
     <div className="relative h-screen w-full overflow-hidden flex items-center justify-center">
-      {/* Background Video */}
       <video
         autoPlay
         loop
@@ -18,7 +18,6 @@ const Home = () => {
 
       <div className="absolute inset-0 bg-black/50"></div>
 
-      {/* Content */}
       <Container>
         <div className="relative z-10 w-full px-4 text-center">
           <h1 className="w-full leading-none font-bold font-tit text-[10vw] bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-400">

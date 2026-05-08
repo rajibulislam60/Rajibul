@@ -18,7 +18,7 @@ const ProjectArea = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setLayout((prev) => (prev + 1) % 3);
-    }, 5000);
+    }, 10000);
 
     return () => clearInterval(interval);
   }, []);
