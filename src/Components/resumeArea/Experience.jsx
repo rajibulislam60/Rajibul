@@ -46,14 +46,12 @@ const experienceData = [
 const Experience = () => {
   return (
     <section className="relative py-24 bg-[#0a0a0a] rounded-2xl font-tit rounded-tr-[8rem] text-white overflow-hidden">
-      {/* Top Right Triangle Design */}
       <div
         className="absolute top-0 right-0 w-full h-full bg-[#161616] z-0"
         style={{ clipPath: "polygon(100% 0, 100% 100%, 60% 0)" }}
       ></div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
-        {/* Section Header */}
         <div className="mb-20">
           <h3 className="tracking-[0.4em] text-[10px] sm:text-xs font-bold text-gray-500 mb-4">
             [ ( 02 ) Experience ]
@@ -63,14 +61,12 @@ const Experience = () => {
           </h2>
         </div>
 
-        {/* Experience List Container */}
         <div className="relative border-t border-white/10">
           {experienceData.map((item, index) => (
             <div
               key={index}
               className="group relative border-b border-white/10 py-12 flex flex-col md:flex-row md:items-center transition-all duration-500 hover:bg-white/[0.02] px-4 sm:px-8"
             >
-              {/* Column 1: Year & Company */}
               <div className="w-full md:w-1/4 mb-4 md:mb-0">
                 <span className="text-xs font-medium text-gray-500 block mb-2 tracking-widest uppercase">
                   {item.year}
@@ -80,7 +76,6 @@ const Experience = () => {
                 </h4>
               </div>
 
-              {/* Column 2: Title & Description */}
               <div className="w-full md:w-2/3 md:pl-12 relative z-10">
                 <h4 className="text-2xl md:text-3xl font-semibold mb-3 group-hover:translate-x-2 transition-transform duration-500">
                   {item.title}
@@ -100,7 +95,6 @@ const Experience = () => {
                 />
               </div>
 
-              {/* Arrow Icon */}
               <div className="ml-auto hidden md:block opacity-20 group-hover:opacity-100 group-hover:text-blue-400 transition-all duration-300">
                 <svg
                   width="28"
