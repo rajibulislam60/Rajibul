@@ -10,14 +10,11 @@ const SocialBox = () => {
     <section className="py-20">
       <Container>
         <div>
-          {/* Heading */}
           <h3 className="tracking-[0.4em] text-[10px] sm:text-xs font-bold text-gray-500 mb-6 uppercase">
             [ Everyday's Social Box ]
           </h3>
 
-          {/* Main Area */}
           <div className="flex flex-col lg:flex-row gap-12 items-center">
-            {/* Image */}
             <div className="w-full lg:w-[45%] h-[350px] sm:h-[450px] lg:h-[550px] overflow-hidden lg:rounded-r-full">
               <img
                 className="w-full h-full object-cover hover:scale-105 duration-500"
@@ -26,7 +23,6 @@ const SocialBox = () => {
               />
             </div>
 
-            {/* Social List */}
             <div className="w-full lg:w-[55%] flex flex-col gap-10">
               {/* GitHub */}
               <a
@@ -49,7 +45,7 @@ const SocialBox = () => {
 
               {/* LinkedIn */}
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/md-rajibul-islam-rajib-513229257/"
                 target="_blank"
                 rel="noreferrer"
                 className="ml-16 border border-gray-300 rounded-full px-8 py-5 flex items-center justify-between hover:bg-[#0077B5] hover:text-white duration-300"
@@ -85,7 +81,7 @@ const SocialBox = () => {
 
               {/* Facebook */}
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/rajibul.islam.rajib.426441"
                 target="_blank"
                 rel="noreferrer"
                 className="ml-16 border border-gray-300 rounded-full px-8 py-5 flex items-center justify-between hover:bg-[#1877F2] hover:text-white duration-300"

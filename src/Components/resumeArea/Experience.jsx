@@ -9,7 +9,8 @@ const experienceData = [
     description:
       "Built an AI-powered chatbot using OpenAI API with real-time responses and modern chat UI design.",
     image:
-      "https://images.unsplash.com/photo-1676299081847-824916de030a?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=600&auto=format&fit=crop",
+    link: "https://ai-chat-ecru-iota.vercel.app/",
   },
   {
     title: "GLE Education Platform",
@@ -17,9 +18,21 @@ const experienceData = [
     role: "Full Stack Developer",
     year: "2026",
     description:
-      "Developed a complete education platform with competitions and dashboard functionality.",
+      "Developed a complete education platform with competitions, user dashboard, and management system.",
     image:
-      "https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=600&auto=format&fit=crop",
+    link: "https://gle-z.netlify.app/",
+  },
+  {
+    title: "Zavisoft",
+    company: "E-Commerce",
+    role: "Full Stack Developer",
+    year: "2026",
+    description:
+      "Built a scalable e-commerce system with modern UI, authentication, and API integration.",
+    image:
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=600&auto=format&fit=crop",
+    link: "https://zavisoft-ecom.netlify.app/",
   },
   {
     title: "E-commerce Website",
@@ -27,9 +40,10 @@ const experienceData = [
     role: "Full Stack Developer Intern",
     year: "2025",
     description:
-      "Built a full-stack e-commerce app with cart management and REST API integration.",
+      "Built a full-stack e-commerce application with cart management and REST API integration.",
     image:
-      "https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=600&auto=format&fit=crop",
+    link: "https://github.com/rajibulislam60/fullstack_ecommerce",
   },
   {
     title: "Travel Website UI",
@@ -37,12 +51,23 @@ const experienceData = [
     role: "Frontend Developer",
     year: "2025",
     description:
-      "Designed responsive travel website UI with high-conversion UX patterns.",
+      "Designed a responsive travel website UI with modern UX patterns and mobile-first layout.",
     image:
       "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=600&auto=format&fit=crop",
+    link: "https://flyfartech.netlify.app/",
+  },
+  {
+    title: "E-commerce Dashboard",
+    company: "Simple Shop",
+    role: "Frontend Developer (API Integration)",
+    year: "2025",
+    description:
+      "Built a responsive admin dashboard with API integration for managing products and orders.",
+    image:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop",
+    link: "https://simpleshop-dashboard.netlify.app/",
   },
 ];
-
 const Experience = () => {
   return (
     <section className="relative py-24 bg-[#0a0a0a] rounded-2xl font-tit rounded-tr-[8rem] text-white overflow-hidden">
@@ -63,8 +88,9 @@ const Experience = () => {
 
         <div className="relative border-t border-white/10">
           {experienceData.map((item, index) => (
-            <div
+            <a
               key={index}
+              href={item.link}
               className="group relative border-b border-white/10 py-12 flex flex-col md:flex-row md:items-center transition-all duration-500 hover:bg-white/[0.02] px-4 sm:px-8"
             >
               <div className="w-full md:w-1/4 mb-4 md:mb-0">
@@ -111,7 +137,7 @@ const Experience = () => {
                   <polyline points="7 7 17 7 17 17"></polyline>
                 </svg>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
