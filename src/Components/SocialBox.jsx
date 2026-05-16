@@ -3,55 +3,126 @@ import Container from "./../container/Container";
 import SocialImage from "../images/pp2.png";
 
 import { FaGithub, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
-import { SiDevpost } from "react-icons/si";
+import { SiDevpost, SiFigma } from "react-icons/si";
 
 const SocialBox = () => {
   return (
-    <div>
+    <section className="py-20">
       <Container>
         <div>
-          <h3 className="tracking-[0.4em] text-[10px] sm:text-xs font-bold text-gray-500 mb-4">
+          {/* Heading */}
+          <h3 className="tracking-[0.4em] text-[10px] sm:text-xs font-bold text-gray-500 mb-6 uppercase">
             [ Everyday's Social Box ]
           </h3>
 
-          <div className="w-full flex gap-12 items-center">
+          {/* Main Area */}
+          <div className="flex flex-col lg:flex-row gap-12 items-center">
             {/* Image */}
-            <div className="w-[60%] h-[500px]">
+            <div className="w-full lg:w-[45%] h-[350px] sm:h-[450px] lg:h-[550px] overflow-hidden lg:rounded-r-full">
               <img
-                className="w-full h-full object-cover rounded-tr-full rounded-br-full"
+                className="w-full h-full object-cover hover:scale-105 duration-500"
                 src={SocialImage}
-                alt="Social Image"
+                alt="Social"
               />
             </div>
 
             {/* Social List */}
-            <div className="w-[60%] h-[500px]">
-              <ul className="h-full w-full rounded-tl-full rounded-bl-full flex flex-col justify-center gap-10 text-xl font-semibold">
-                <li className="flex items-center gap-4">
+            <div className="w-full lg:w-[55%] flex flex-col gap-10">
+              {/* GitHub */}
+              <a
+                href="https://github.com/rajibulislam60"
+                target="_blank"
+                rel="noreferrer"
+                className="border border-gray-300 rounded-full px-8 py-5 flex items-center justify-between hover:bg-black hover:text-white duration-300"
+              >
+                <div className="flex items-center gap-5">
                   <FaGithub className="text-3xl" />
-                  GitHub
-                </li>
+                  <div>
+                    <h3 className="text-xl font-semibold">GitHub</h3>
+                    <p className="text-sm opacity-70">
+                      Explore my repositories
+                    </p>
+                  </div>
+                </div>
+                <span className="text-sm font-medium">Visit</span>
+              </a>
 
-                <li className="ml-14 flex items-center gap-4">
+              {/* LinkedIn */}
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noreferrer"
+                className="ml-16 border border-gray-300 rounded-full px-8 py-5 flex items-center justify-between hover:bg-[#0077B5] hover:text-white duration-300"
+              >
+                <div className="flex items-center gap-5">
                   <FaLinkedinIn className="text-3xl" />
-                  LinkedIn
-                </li>
+                  <div>
+                    <h3 className="text-xl font-semibold">LinkedIn</h3>
+                    <p className="text-sm opacity-70">Connect professionally</p>
+                  </div>
+                </div>
+                <span className="text-sm font-medium">Visit</span>
+              </a>
 
-                <li className="ml-14 flex items-center gap-4">
+              {/* Devpost */}
+              <a
+                href="https://devpost.com/rajibulislam60707877"
+                target="_blank"
+                rel="noreferrer"
+                className="ml-28 border border-gray-300 rounded-full px-8 py-5 flex items-center justify-between hover:bg-[#003E54] hover:text-white duration-300"
+              >
+                <div className="flex items-center gap-5">
                   <SiDevpost className="text-3xl" />
-                  Devpost
-                </li>
+                  <div>
+                    <h3 className="text-xl font-semibold">Devpost</h3>
+                    <p className="text-sm opacity-70">
+                      View hackathon projects
+                    </p>
+                  </div>
+                </div>
+                <span className="text-sm font-medium">Visit</span>
+              </a>
 
-                <li className="flex items-center gap-4">
+              {/* Facebook */}
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noreferrer"
+                className="ml-16 border border-gray-300 rounded-full px-8 py-5 flex items-center justify-between hover:bg-[#1877F2] hover:text-white duration-300"
+              >
+                <div className="flex items-center gap-5">
                   <FaFacebookF className="text-3xl" />
-                  Facebook
-                </li>
-              </ul>
+                  <div>
+                    <h3 className="text-xl font-semibold">Facebook</h3>
+                    <p className="text-sm opacity-70">
+                      Follow my social updates
+                    </p>
+                  </div>
+                </div>
+                <span className="text-sm font-medium">Visit</span>
+              </a>
+
+              {/* Figma */}
+              <a
+                href="#"
+                target="_blank"
+                rel="noreferrer"
+                className="border border-gray-300 rounded-full px-8 py-5 flex items-center justify-between hover:bg-[#F24E1E] hover:text-white duration-300"
+              >
+                <div className="flex items-center gap-5">
+                  <SiFigma className="text-3xl" />
+                  <div>
+                    <h3 className="text-xl font-semibold">Figma</h3>
+                    <p className="text-sm opacity-70">View design projects</p>
+                  </div>
+                </div>
+                <span className="text-sm font-medium">Visit</span>
+              </a>
             </div>
           </div>
         </div>
       </Container>
-    </div>
+    </section>
   );
 };
 
