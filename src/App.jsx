@@ -6,6 +6,7 @@ import Footer from "./Components/Footer";
 import Blogs from "./pages/Blogs";
 import Resume from "./pages/Resume";
 import Nabvar from "./Components/Nabvar";
+import SocialBox from "./Components/SocialBox";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
       <About />
       <Work />
       <Resume />
+      <SocialBox />
       <Blogs />
       <Footer />
     </div>
