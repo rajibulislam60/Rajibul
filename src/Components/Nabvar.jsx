@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import LogoImage from "../images/logo.png";
 import { HiMenu, HiX } from "react-icons/hi";
 import Container from "./../container/Container";
+import CV from "./CV";
 
 // 1. Updated menuItems with href IDs
 const menuItems = [
@@ -35,6 +36,12 @@ const NavItem = ({ label, href }) => {
 const Navbar = ({ className }) => {
   const [open, setOpen] = useState(false);
 
+  const [cvshow, setCvshow] = useState(false);
+
+  const toggleCvShow = () => {
+    setCvshow(!cvshow);
+  };
+
   return (
     <nav
       className={`fixed w-full font-tit z-50 py-4 transition-all ${className}`}
@@ -60,9 +67,38 @@ const Navbar = ({ className }) => {
           </div>
 
           <div className="flex items-center gap-4">
-            <button className="hidden md:block border-2 border-gray-400 rounded-[8px] hover:bg-gray-400 hover:text-black text-gray-400 transition-all duration-300 active:scale-95 font-bold text-sm px-6 py-2.5">
+            <button
+              onClick={toggleCvShow}
+              className="hidden md:block border-2 border-gray-400 rounded-[8px] hover:bg-gray-400 hover:text-black text-gray-400 transition-all duration-300 active:scale-95 font-bold text-sm px-6 py-2.5"
+            >
               Hire Me
             </button>
+            {cvshow && (
+              <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+                <div className="bg-white p-6 rounded-xl shadow-lg">
+                  <CV />
+
+                  <div className="mt-4 flex gap-3 justify-end">
+                    {/* Download CV */}
+                    <a
+                      href="/src/images/Mern-Rajibul-CV.pdf" // Put your CV in the public folder
+                      download="Rajibul_Islam_CV.pdf"
+                      className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+                    >
+                      Download CV
+                    </a>
+
+                    {/* Close Modal */}
+                    <button
+                      onClick={toggleCvShow}
+                      className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
 
             <button
               onClick={() => setOpen(!open)}
@@ -92,9 +128,38 @@ const Navbar = ({ className }) => {
               </li>
             ))}
             <li className="pt-2">
-              <button className="w-full border-2 border-black rounded-[12px] bg-black text-white py-4 font-bold active:scale-[0.98] transition-transform">
+              <button
+                onClick={toggleCvShow}
+                className="w-full border-2 border-black rounded-[12px] bg-black text-white py-4 font-bold active:scale-[0.98] transition-transform"
+              >
                 Hire Me
               </button>
+              {cvshow && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+                  <div className="bg-white p-6 rounded-xl shadow-lg">
+                    <CV />
+
+                    <div className="mt-4 flex gap-3 justify-end">
+                      {/* Download CV */}
+                      <a
+                        href="/src/images/Mern-Rajibul-CV.pdf" // Put your CV in the public folder
+                        download="Rajibul_Islam_CV.pdf"
+                        className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+                      >
+                        Download CV
+                      </a>
+
+                      {/* Close Modal */}
+                      <button
+                        onClick={toggleCvShow}
+                        className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition"
+                      >
+                        Close
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
             </li>
           </ul>
         </div>
